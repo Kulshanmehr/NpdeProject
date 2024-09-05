@@ -1,0 +1,17 @@
+{
+  "name": "nodeproject",
+  "version": "1.0.0",
+  "description": "Hospital Management System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "Jai",
+    "Siya",
+    "Ram"
+  ],
+  "author": "Ram",
+  "license": "ISC"
+}
