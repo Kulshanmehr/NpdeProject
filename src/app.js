@@ -1,5 +1,5 @@
-import express from express;
-import cors from cors;
+import express from "express";
+import cors from "cors";
 import cookieParser from "cookie-parser";
 const app = express();
 
@@ -21,11 +21,11 @@ app.use(express.urlencoded({
 app.use(express.static('public'));
 app.use(cookieParser())
 
-import router from "../routes/user.routes.js";
+import UserRouter from "../routes/user.routes.js";
 
 // Routes Declaration
 
-app.use("/api/v1/users",router);
+app.use("/api/v1/users",UserRouter);
 
 
 export {app};
