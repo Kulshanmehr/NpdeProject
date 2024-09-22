@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { loginUser, registerUser } from "../controllers/user.controller.js";
+import { loginUser, registerUser ,loggedUser , refreshAccessToken } from "../controllers/user.controller.js";
 
 import {upload} from "../middlewares/multer.middleware.js";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
@@ -11,15 +11,17 @@ router.get("/",(req,res)=>{
         isWoking:"dlasjdlasj"
     })
 })
-router.post('/register', 
-    upload.fields([
-      { name: 'avatar', maxCount: 1 },{ name : "coverImages" , maxCount : 1}
-    ]), 
-    registerUser
-  );
+    router.post('/register', 
+      upload.fields([
+        { name: 'avatar', maxCount: 1 },{ name : "coverImages" , maxCount : 1}
+      ]), 
+      registerUser
+    );
 
-  router.post('/login',loginUser);
+    router.post('/login',loginUser);
 
-  router.post('/logout',verifyJWT,loggedUser)
+    router.post('/logout',verifyJWT,loggedUser)
+
+    router.post('/refreshAccessToken',refreshAccessToken)
 
 export default router;
